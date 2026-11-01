@@ -1,3 +1,4 @@
+/* ===== Variables de color ===== */
 :root {
     --azul-oscuro: #1e3a8a;
     --azul: #2563eb;
@@ -8,6 +9,7 @@
     --blanco: #ffffff;
 }
 
+/* ===== Estilos generales ===== */
 * {
     margin: 0;
     padding: 0;
@@ -22,6 +24,7 @@ body {
     padding: 40px 16px;
 }
 
+/* ===== Tarjeta del CV ===== */
 .cv {
     max-width: 820px;
     margin: 0 auto;
@@ -38,6 +41,7 @@ body {
     to   { opacity: 1; transform: translateY(0); }
 }
 
+/* ===== Encabezado con foto ===== */
 .encabezado {
     display: flex;
     align-items: center;
@@ -80,6 +84,7 @@ body {
     color: var(--blanco);
 }
 
+/* ===== Secciones ===== */
 section {
     margin: 0 40px;
     padding: 20px 0 4px;
@@ -96,6 +101,7 @@ h2 {
     border-bottom: 2px solid var(--borde);
 }
 
+/* Línea que se llena al pasar el mouse por la sección */
 h2::after {
     content: "";
     position: absolute;
@@ -119,7 +125,7 @@ strong {
     color: var(--azul-oscuro);
 }
 
-
+/* ===== Listas ===== */
 ul {
     list-style: none;
 }
@@ -152,7 +158,7 @@ section > ul:not(.etiquetas) li:hover::before {
     transform: scale(1.5);
 }
 
-
+/* ===== Conocimientos como etiquetas ===== */
 .etiquetas {
     display: flex;
     flex-wrap: wrap;
@@ -177,7 +183,7 @@ section > ul:not(.etiquetas) li:hover::before {
     box-shadow: 0 6px 14px rgba(37, 99, 235, 0.3);
 }
 
-
+/* ===== Contacto ===== */
 .contacto a {
     color: var(--texto);
     text-decoration: none;
@@ -190,6 +196,7 @@ section > ul:not(.etiquetas) li:hover::before {
     border-bottom-color: var(--azul);
 }
 
+/* ===== Responsive (celular) ===== */
 @media (max-width: 600px) {
     body {
         padding: 16px;
@@ -218,4 +225,363 @@ section > ul:not(.etiquetas) li:hover::before {
     p {
         text-align: left;
     }
+}
+
+/* ===== Botón volver ===== */
+.volver {
+    display: inline-block;
+    margin: 0 auto 16px;
+    max-width: 820px;
+    width: 100%;
+    color: var(--azul-oscuro);
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+body > .volver {
+    display: block;
+}
+
+.volver:hover {
+    color: var(--azul);
+    transform: translateX(-4px);
+}
+
+/* ===== Menú principal ===== */
+.menu {
+    max-width: 820px;
+    margin: 0 auto;
+    text-align: center;
+    animation: aparecer 0.6s ease-out;
+}
+
+.menu-encabezado {
+    background: linear-gradient(135deg, var(--azul-oscuro), var(--azul));
+    color: var(--blanco);
+    border-radius: 16px;
+    padding: 40px 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.menu-encabezado .foto {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 14px;
+}
+
+.menu-encabezado h1 {
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+}
+
+.menu-encabezado p {
+    color: var(--azul-claro);
+}
+
+.menu-opciones {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    margin-top: 28px;
+}
+
+.menu-tarjeta {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 32px 24px 28px;
+    background-color: var(--blanco);
+    color: var(--texto);
+    text-decoration: none;
+    border-radius: 16px;
+    border: 2px solid transparent;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.menu-tarjeta:hover {
+    transform: translateY(-8px);
+    border-color: var(--azul);
+    box-shadow: 0 16px 34px rgba(37, 99, 235, 0.2);
+}
+
+.menu-icono {
+    font-size: 3rem;
+    transition: transform 0.35s ease;
+}
+
+.menu-tarjeta:hover .menu-icono {
+    transform: scale(1.15) rotate(-6deg);
+}
+
+.menu-tarjeta h2 {
+    color: var(--azul-oscuro);
+    font-size: 1.4rem;
+}
+
+.menu-tarjeta p {
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.menu-etiqueta {
+    background-color: var(--azul-claro);
+    color: var(--azul-oscuro);
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 3px 12px;
+    border-radius: 20px;
+}
+
+.menu-ir {
+    margin-top: 6px;
+    color: var(--azul);
+    font-weight: 600;
+    transition: letter-spacing 0.35s ease;
+}
+
+.menu-tarjeta:hover .menu-ir {
+    letter-spacing: 1px;
+}
+
+.pie {
+    margin-top: 32px;
+    color: #718096;
+    font-size: 0.9rem;
+}
+
+/* ===== Calculadora ===== */
+.calc {
+    max-width: 420px;
+    margin: 0 auto;
+    background-color: #0f1b3d;
+    border-radius: 24px;
+    padding: 28px;
+    box-shadow: 0 20px 40px rgba(15, 27, 61, 0.35);
+    color: var(--blanco);
+    animation: aparecer 0.6s ease-out;
+}
+
+body > .volver + .calc {
+    margin-top: 0;
+}
+
+.calc-titulo {
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+}
+
+.calc-titulo span {
+    background-color: var(--azul);
+    font-size: 0.8rem;
+    padding: 2px 10px;
+    border-radius: 20px;
+    vertical-align: middle;
+}
+
+.calc-pantalla {
+    background: linear-gradient(180deg, #1c2b55, #16244a);
+    border-radius: 14px;
+    padding: 18px 20px;
+    text-align: right;
+    margin-bottom: 20px;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.4);
+    overflow-wrap: anywhere;
+}
+
+.calc-operacion {
+    color: #93a8d6;
+    font-size: 1rem;
+    min-height: 1.5em;
+}
+
+.calc-resultado {
+    font-size: 2.6rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.calc-resultado.calc-error {
+    font-size: 1.2rem;
+    color: #fca5a5;
+    padding: 10px 0;
+}
+
+.calc-entradas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.calc-entradas label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 0.85rem;
+    color: #93a8d6;
+}
+
+.calc-entradas input {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+    font-family: inherit;
+    color: var(--blanco);
+    background-color: #1c2b55;
+    border: 2px solid #2a3b6b;
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.calc-entradas input:focus {
+    border-color: var(--azul);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+}
+
+.calc-teclado {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.calc-tecla {
+    padding: 16px 0;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--blanco);
+    background-color: #24366b;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    box-shadow: 0 4px 0 #15224a;
+    transition: background-color 0.25s ease, transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.calc-tecla:hover {
+    background-color: var(--azul);
+}
+
+.calc-tecla:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 #15224a;
+}
+
+.calc-tecla.activa {
+    background-color: var(--azul);
+    box-shadow: 0 4px 0 var(--azul-oscuro);
+}
+
+.calc-historial {
+    margin-top: 24px;
+    border-top: 1px solid #2a3b6b;
+    padding-top: 16px;
+}
+
+.calc-historial-cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.calc-historial h2 {
+    font-size: 0.95rem;
+    color: #93a8d6;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.calc-limpiar {
+    background: none;
+    border: 1px solid #2a3b6b;
+    color: #93a8d6;
+    padding: 4px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.calc-limpiar:hover {
+    background-color: #dc2626;
+    border-color: #dc2626;
+    color: var(--blanco);
+}
+
+.calc-historial ul {
+    list-style: none;
+}
+
+.calc-historial li {
+    padding: 8px 10px;
+    border-radius: 8px;
+    text-align: right;
+    font-family: Consolas, monospace;
+    transition: background-color 0.3s ease;
+}
+
+.calc-historial li:hover {
+    background-color: #1c2b55;
+}
+
+.calc-vacio {
+    color: #6b7fb0;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+    .calc {
+        padding: 20px;
+    }
+
+    .menu-encabezado h1 {
+        font-size: 1.7rem;
+    }
+}
+
+/* ===== Ajustes para que los estilos del CV no afecten al menú ni a la calculadora ===== */
+.menu-encabezado p,
+.menu-tarjeta p {
+    text-align: center;
+}
+
+.menu-tarjeta h2,
+.calc .calc-historial h2 {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-tarjeta h2 {
+    text-transform: none;
+}
+
+.menu-tarjeta h2::after,
+.calc .calc-historial h2::after {
+    display: none;
+}
+
+.calc .calc-historial {
+    margin: 24px 0 0;
+    padding: 16px 0 0;
+}
+
+.calc .calc-historial ul li {
+    padding: 8px 10px;
+}
+
+.calc .calc-historial ul li::before {
+    display: none;
+}
+
+.calc .calc-historial ul li:hover {
+    transform: none;
+    background-color: #1c2b55;
 }
